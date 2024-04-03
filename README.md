@@ -16,7 +16,7 @@ This project is a React-based user interface for browsing tags provided by the S
 
 ## Getting Started
 
-1. Clone the repository (git clone https://github.com/your-username/your-repository.git)
+1. Clone the repository (git clone https://github.com/michaltrabski/github-tags.git)
 2. Navigate to the project directory (cd your-repository)
 3. Install dependencies (npm ci)
 4. Start the application (npm start)

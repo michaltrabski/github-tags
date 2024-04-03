@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Box, Grid, TextField, Typography } from "@mui/material";
 import { useQuery } from "@tanstack/react-query";
 
-import DataGridDemo from "./components/Table";
-import Wrapper from "./components/Wrapper";
+import Table from "./components/Table/Table";
+import Wrapper from "./components/Wrapper/Wrapper";
 
 import "./App.css";
 
@@ -76,6 +76,7 @@ function App() {
         {isFetched && (
           <Grid item xs={12}>
             <Typography variant="h6">Set amount of items per page: </Typography>
+
             <Box>
               <TextField
                 required
@@ -90,7 +91,8 @@ function App() {
 
             <Grid item xs={12}>
               <Typography variant="caption">Click on header to sort</Typography>
-              <DataGridDemo tags={tags} paginationModel={paginationModel} setPaginationModel={setPaginationModel} />
+
+              <Table tags={tags} paginationModel={paginationModel} setPaginationModel={setPaginationModel} />
             </Grid>
           </Grid>
         )}

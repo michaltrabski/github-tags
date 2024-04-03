@@ -1,6 +1,6 @@
 import { Grid, Paper } from "@mui/material";
 
-interface WrapperProps {
+export interface WrapperProps {
   children: React.ReactNode;
 }
 

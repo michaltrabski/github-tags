@@ -2,7 +2,7 @@ import { SetStateAction } from "react";
 import { Box } from "@mui/material";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 
-import { PaginationModel, Tag } from "../App";
+import { PaginationModel, Tag } from "../../App";
 
 interface DataGridDemoProps {
   tags: Tag[];
@@ -10,7 +10,7 @@ interface DataGridDemoProps {
   setPaginationModel: (value: SetStateAction<PaginationModel>) => void;
 }
 
-export default function DataGridDemo({ tags, paginationModel, setPaginationModel }: DataGridDemoProps) {
+export default function Table({ tags, paginationModel, setPaginationModel }: DataGridDemoProps) {
   const columns: GridColDef<(typeof rows)[number]>[] = [
     {
       field: "tagNane",

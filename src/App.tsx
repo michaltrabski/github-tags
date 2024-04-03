@@ -63,70 +63,39 @@ function App() {
   const tags = data?.items || [];
 
   return (
-    <>
-      <Wrapper>
-        <Grid container spacing={2}>
-          <Grid item xs={12}>
-            <Typography variant="h3" component="h1">
-              Tags from StackOverflow API
-            </Typography>
+    <Wrapper>
+      <Grid container spacing={2}>
+        <Grid item xs={12}>
+          <Typography variant="h3" component="h1">
+            Tags from StackOverflow API
+          </Typography>
 
-            {isPending && <Typography variant="h6">Loading...</Typography>}
-          </Grid>
-
-          {isFetched && (
-            <Grid item xs={12}>
-              <Typography variant="h6">Set amount of items per page: </Typography>
-              <Box>
-                <TextField
-                  required
-                  type="number"
-                  id="itemsPerPage"
-                  value={paginationModel.pageSize}
-                  onChange={(e) => handleChange(e.target.value)}
-                />
-              </Box>
-
-              <Typography variant="caption">Value must be greater than 0</Typography>
-
-              <Grid item xs={12}>
-                <Typography variant="caption">Click on header to sort</Typography>
-                <DataGridDemo tags={tags} paginationModel={paginationModel} setPaginationModel={setPaginationModel} />
-              </Grid>
-            </Grid>
-          )}
+          {isPending && <Typography variant="h6">Loading...</Typography>}
         </Grid>
-      </Wrapper>
 
-      <div style={{ color: "red", fontSize: 15 }}>
-        <p>
-          Treść zadania: Przygotować w React interfejs użytkownika przeglądarki tagów udostępnianych przez API
-          StackOverflow (https://api.stackexchange.com/docs). Założenia projektu:
-        </p>
-        <ul>
-          <li style={{ color: "green" }}>
-            stronicowana tabela lub lista tagów wraz liczbą powiązanych postów (pole count)
-          </li>
-          <li style={{ color: "green" }}>
-            liczba elementów na stronie konfigurowalna przez pole liczbowe nad tabelą/listą
-          </li>
-          <li>wybór pola i kierunku sortowania przez element UI własnego wyboru/projektu</li>
-          <li style={{ color: "green" }}>
-            przygotować odpowiednie stany dla etapu ładowania danych i błędów przy pobieraniu
-          </li>
-          <li style={{ color: "green" }}>wykorzystać gotową bibliotekę komponentów UI, np. MUI</li>
-          <li style={{ color: "green" }}>
-            wykorzystać gotowe biblioteki do zarządzania stanem i pobierania danych (wybór wedle uznania, stosownie do
-            stopnia komplikacji projektu i z myślą o jak najszybszej realizacji zadania)
-          </li>
-          <li>przygotować Storybook do prezentacji wykorzystanych komponentów składowych aplikacji</li>
-          <li>rozwiązanie opublikować w repozytorium GitHub</li>
-          <li>
-            całość powinna się uruchamiać wyłącznie po wykonaniu komend "npm ci", "npm start", "npm run storybook"
-          </li>
-        </ul>
-      </div>
-    </>
+        {isFetched && (
+          <Grid item xs={12}>
+            <Typography variant="h6">Set amount of items per page: </Typography>
+            <Box>
+              <TextField
+                required
+                type="number"
+                id="itemsPerPage"
+                value={paginationModel.pageSize}
+                onChange={(e) => handleChange(e.target.value)}
+              />
+            </Box>
+
+            <Typography variant="caption">Value must be greater than 0</Typography>
+
+            <Grid item xs={12}>
+              <Typography variant="caption">Click on header to sort</Typography>
+              <DataGridDemo tags={tags} paginationModel={paginationModel} setPaginationModel={setPaginationModel} />
+            </Grid>
+          </Grid>
+        )}
+      </Grid>
+    </Wrapper>
   );
 }
 
